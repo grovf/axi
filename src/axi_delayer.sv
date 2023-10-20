@@ -185,7 +185,7 @@ module axi_delayer_intf #(
     .mst_resp_i ( mst_resp )
   );
 
-// pragma translate_off
+// synopsys translate_off
 `ifndef VERILATOR
   initial begin: p_assertions
     assert (AXI_ID_WIDTH >= 1) else $fatal(1, "AXI ID width must be at least 1!");
@@ -194,5 +194,5 @@ module axi_delayer_intf #(
     assert (AXI_USER_WIDTH >= 1) else $fatal(1, "AXI USER width must be at least 1!");
   end
 `endif
-// pragma translate_on
+// synopsys translate_on
 endmodule

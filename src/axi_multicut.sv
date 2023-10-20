@@ -80,13 +80,13 @@ module axi_multicut #(
   end
 
   // Check the invariants
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   initial begin
     assert(NoCuts >= 0);
   end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 `include "axi/assign.svh"
@@ -148,7 +148,7 @@ module axi_multicut_intf #(
   );
 
   // Check the invariants.
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   initial begin
     assert (ADDR_WIDTH > 0) else $fatal(1, "Wrong addr width parameter");
@@ -165,7 +165,7 @@ module axi_multicut_intf #(
     assert (out.AXI_USER_WIDTH == USER_WIDTH) else $fatal(1, "Wrong interface definition");
   end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 module axi_lite_multicut_intf #(
@@ -222,7 +222,7 @@ module axi_lite_multicut_intf #(
   );
 
   // Check the invariants.
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   initial begin
     assert (ADDR_WIDTH > 0) else $fatal(1, "Wrong addr width parameter");
@@ -233,5 +233,5 @@ module axi_lite_multicut_intf #(
     assert (out.AXI_DATA_WIDTH == DATA_WIDTH) else $fatal(1, "Wrong interface definition");
   end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule

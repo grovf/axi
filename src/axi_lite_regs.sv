@@ -378,7 +378,7 @@ module axi_lite_regs #(
   );
 
   // Validate parameters.
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
     initial begin: p_assertions
       assert (RegNumBytes > 32'd0) else
@@ -402,7 +402,7 @@ module axi_lite_regs #(
           else $fatal(1, "Read-only register at `byte_index: %0d` was changed by AXI!", i);
     end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 
@@ -470,7 +470,7 @@ module axi_lite_regs_intf #(
   );
 
   // Validate parameters.
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
     initial begin: p_assertions
       assert (AXI_ADDR_WIDTH == $bits(slv.aw_addr))
@@ -479,5 +479,5 @@ module axi_lite_regs_intf #(
           else $fatal(1, "AXI_DATA_WIDTH does not match slv interface!");
     end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule

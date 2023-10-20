@@ -589,7 +589,7 @@ module axi_to_detailed_mem #(
   `FFARN(collect_b_exokay_q, collect_b_exokay_d, 1'b1, clk_i, rst_ni)
 
   // Assertions
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   default disable iff (!rst_ni);
   assume property (@(posedge clk_i)
@@ -616,7 +616,7 @@ module axi_to_detailed_mem #(
   assert property (@(posedge clk_i) meta_valid && meta.atop != '0 |-> meta.write)
     else $warning("Unexpected atomic operation on read.");
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 

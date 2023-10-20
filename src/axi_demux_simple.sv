@@ -458,7 +458,7 @@ module axi_demux_simple #(
     end
 
 // Validate parameters.
-// pragma translate_off
+// synopsys translate_off
 `ifndef VERILATOR
 `ifndef XSIM
     initial begin: validate_params
@@ -505,7 +505,7 @@ module axi_demux_simple #(
     `ASSUME(NoAtopAllowed, !AtopSupport && slv_req_i.aw_valid |-> slv_req_i.aw.atop == '0)
 `endif
 `endif
-// pragma translate_on
+// synopsys translate_on
   end
 endmodule
 
@@ -617,7 +617,7 @@ module axi_demux_id_counters #(
     // holds the selection signal for this id
     `FFLARN(mst_select_q[i], push_mst_select_i, push_en[i], '0, clk_i, rst_ni)
 
-// pragma translate_off
+// synopsys translate_off
 `ifndef VERILATOR
 `ifndef XSIM
     // Validate parameters.
@@ -627,7 +627,7 @@ module axi_demux_id_counters #(
                    The reason is probably a faulty AXI response.", i);
 `endif
 `endif
-// pragma translate_on
+// synopsys translate_on
   end
 endmodule
 

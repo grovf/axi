@@ -134,13 +134,13 @@ package axi_pkg;
   function automatic largest_addr_t wrap_boundary (largest_addr_t addr, size_t size, len_t len);
     largest_addr_t wrap_addr;
 
-    // pragma translate_off
+    // synopsys translate_off
     `ifndef VERILATOR
       assume (len == len_t'(4'b1) || len == len_t'(4'b11) || len == len_t'(4'b111) ||
           len == len_t'(4'b1111)) else
         $error("AXI BURST_WRAP with not allowed len of: %0h", len);
     `endif
-    // pragma translate_on
+    // synopsys translate_on
 
     // In A3-51 the wrap boundary is defined as:
     // `Wrap_Boundary = (INT(Start_Address / (Number_Bytes × Burst_Length))) ×

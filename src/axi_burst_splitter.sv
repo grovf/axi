@@ -319,7 +319,7 @@ module axi_burst_splitter #(
   // Assumptions and assertions
   // --------------------------------------------------
   `ifndef VERILATOR
-  // pragma translate_off
+  // synopsys translate_off
   default disable iff (!rst_ni);
   // Inputs
   assume property (@(posedge clk_i) slv_req_i.aw_valid |->
@@ -337,7 +337,7 @@ module axi_burst_splitter #(
     else $fatal(1, "AW burst longer than a single beat emitted!");
   assert property (@(posedge clk_i) mst_req_o.ar_valid |-> mst_req_o.ar.len == '0)
     else $fatal(1, "AR burst longer than a single beat emitted!");
-  // pragma translate_on
+  // synopsys translate_on
   `endif
 
 endmodule
@@ -577,10 +577,10 @@ module axi_burst_splitter_counters #(
   `FFARN(err_q, err_d, '0, clk_i, rst_ni)
 
   `ifndef VERILATOR
-  // pragma translate_off
+  // synopsys translate_off
   assume property (@(posedge clk_i) idq_oup_gnt |-> idq_oup_valid)
     else $warning("Invalid output at ID queue, read not granted!");
-  // pragma translate_on
+  // synopsys translate_on
   `endif
 
 endmodule

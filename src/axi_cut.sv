@@ -176,7 +176,7 @@ module axi_cut_intf #(
   );
 
   // Check the invariants.
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   initial begin
     assert (ADDR_WIDTH > 0) else $fatal(1, "Wrong addr width parameter");
@@ -193,7 +193,7 @@ module axi_cut_intf #(
     assert (out.AXI_USER_WIDTH == USER_WIDTH) else $fatal(1, "Wrong interface definition");
   end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 module axi_lite_cut_intf #(
@@ -250,7 +250,7 @@ module axi_lite_cut_intf #(
   );
 
   // Check the invariants.
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   initial begin
     assert (ADDR_WIDTH > 0) else $fatal(1, "Wrong addr width parameter");
@@ -261,5 +261,5 @@ module axi_lite_cut_intf #(
     assert (out.AXI_DATA_WIDTH == DATA_WIDTH) else $fatal(1, "Wrong interface definition");
   end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule

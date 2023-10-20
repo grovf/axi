@@ -112,7 +112,7 @@ module axi_lite_xbar #(
         mst_port_idx_t'(Cfg.NoMstPorts) : mst_port_idx_t'(dec_ar);
 
     // make sure that the default slave does not get changed, if there is an unserved Ax
-    // pragma translate_off
+    // synopsys translate_off
     `ifndef VERILATOR
     default disable iff (~rst_ni);
     default_aw_mst_port_en: assert property(
@@ -136,7 +136,7 @@ module axi_lite_xbar #(
         else $fatal (1, $sformatf("It is not allowed to change the default mst port\
                                    when there is an unserved Ar beat. Slave Port: %0d", i));
     `endif
-    // pragma translate_on
+    // synopsys translate_on
     axi_lite_demux #(
       .aw_chan_t      ( aw_chan_t          ),  // AW Channel Type
       .w_chan_t       (  w_chan_t          ),  //  W Channel Type

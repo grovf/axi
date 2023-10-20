@@ -384,7 +384,7 @@ module axi_isolate_inner #(
   // the isolated output signal
   assign isolated_o = (state_aw_q == Isolate && state_ar_q == Isolate);
 
-// pragma translate_off
+// synopsys translate_off
 `ifndef VERILATOR
   initial begin
     assume (NumPending > 0) else $fatal(1, "At least one pending transaction required.");
@@ -403,7 +403,7 @@ module axi_isolate_inner #(
       (pending_ar_q == '0) |=> (pending_ar_q != '1)) else
       $fatal(1, "pending_ar_q underflowed");
 `endif
-// pragma translate_on
+// synopsys translate_on
 endmodule
 
 `include "axi/assign.svh"
@@ -473,7 +473,7 @@ module axi_isolate_intf #(
     .isolated_o
   );
 
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   initial begin
     assume (AXI_ID_WIDTH   > 0) else $fatal(1, "AXI_ID_WIDTH   has to be > 0.");
@@ -482,6 +482,6 @@ module axi_isolate_intf #(
     assume (AXI_USER_WIDTH > 0) else $fatal(1, "AXI_USER_WIDTH has to be > 0.");
   end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 

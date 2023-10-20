@@ -167,7 +167,7 @@ module tb_axi_lite_to_apb #(
     $stop();
   end
 
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   // Assertions to determine correct APB protocol sequencing
   default disable iff (!rst_n);
@@ -211,7 +211,7 @@ module tb_axi_lite_to_apb #(
         ((apb_req[i].penable && apb_req[i].pwrite) |-> $stable(apb_req[i].pstrb)));
   end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 
   //-----------------------------------
   // Clock generator

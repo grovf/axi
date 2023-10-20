@@ -359,7 +359,7 @@ module axi_lite_to_apb #(
   `FFLARN(apb_state_q, apb_state_d, apb_update, Setup, clk_i, rst_ni)
 
   // parameter check
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   initial begin : check_params
     addr_width:  assert ($bits(axi_lite_req_i.aw.addr ) == $bits(apb_req_o[0].paddr)) else
@@ -374,7 +374,7 @@ module axi_lite_to_apb #(
       $fatal(1, $sformatf("APB psel signal has to have a width of 1'b1"));
   end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 `include "axi/typedef.svh"

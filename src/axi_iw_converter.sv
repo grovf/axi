@@ -219,7 +219,7 @@ module axi_iw_converter #(
     assign slv_resp_o = mst_resp_i;
   end
 
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   initial begin : p_assert
     assert(AxiAddrWidth > 32'd0)
@@ -251,7 +251,7 @@ module axi_iw_converter #(
       else $fatal(1, "AXI R data widths are not equal!");
   end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 
@@ -333,7 +333,7 @@ module axi_iw_converter_intf #(
     .mst_req_o  ( mst_req  ),
     .mst_resp_i ( mst_resp )
   );
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
     initial begin
       assert (slv.AXI_ID_WIDTH   == AXI_SLV_PORT_ID_WIDTH);
@@ -346,5 +346,5 @@ module axi_iw_converter_intf #(
       assert (mst.AXI_USER_WIDTH == AXI_USER_WIDTH);
     end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule

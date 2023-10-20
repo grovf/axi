@@ -455,7 +455,7 @@ module axi_lite_dw_converter #(
   end
 
   // Assertions, check params
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   initial begin
     assume (AxiAddrWidth        > 0) else $fatal(1, "AXI address width has to be > 0");
@@ -481,7 +481,7 @@ module axi_lite_dw_converter #(
       (slv_res_o.r_valid  && !slv_req_i.r_ready)  |=> $stable(slv_res_o.r)) else
       $fatal(1, "R must remain stable until handshake happened.");
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 /// Interface wrapper for `axi_lite_dw_converter`.

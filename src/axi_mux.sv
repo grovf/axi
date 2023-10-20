@@ -136,7 +136,7 @@ module axi_mux #(
       .data_o  ( slv_resps_o[0].r       )
     );
 // Validate parameters.
-// pragma translate_off
+// synopsys translate_off
     `ASSERT_INIT(CorrectIdWidthSlvAw, $bits(slv_reqs_i[0].aw.id) == SlvAxiIDWidth)
     `ASSERT_INIT(CorrectIdWidthSlvB, $bits(slv_resps_o[0].b.id) == SlvAxiIDWidth)
     `ASSERT_INIT(CorrectIdWidthSlvAr, $bits(slv_reqs_i[0].ar.id) == SlvAxiIDWidth)
@@ -145,7 +145,7 @@ module axi_mux #(
     `ASSERT_INIT(CorrectIdWidthMstB, $bits(mst_resp_i.b.id) == SlvAxiIDWidth)
     `ASSERT_INIT(CorrectIdWidthMstAr, $bits(mst_req_o.ar.id) == SlvAxiIDWidth)
     `ASSERT_INIT(CorrectIdWidthMstR, $bits(mst_resp_i.r.id) == SlvAxiIDWidth)
-// pragma translate_on
+// synopsys translate_on
 
   // other non degenerate cases
   end else begin : gen_mux
@@ -463,7 +463,7 @@ module axi_mux #(
     );
   end
 
-// pragma translate_off
+// synopsys translate_off
 `ifndef VERILATOR
   initial begin
     assert (SlvAxiIDWidth > 0) else $fatal(1, "AXI ID width of slave ports must be non-zero!");
@@ -491,7 +491,7 @@ module axi_mux #(
       else $fatal(1, "ID width of R channel of master port is wrong!");
   end
 `endif
-// pragma translate_on
+// synopsys translate_on
 endmodule
 
 // interface wrap

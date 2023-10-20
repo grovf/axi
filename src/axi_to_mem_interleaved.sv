@@ -351,7 +351,7 @@ module axi_to_mem_interleaved_intf #(
     .mem_rdata_i
   );
 
-// pragma translate_off
+// synopsys translate_off
 `ifndef VERILATOR
   initial begin: p_assertions
     assert (AXI_ADDR_WIDTH  >= 1) else $fatal(1, "AXI address width must be at least 1!");
@@ -360,6 +360,6 @@ module axi_to_mem_interleaved_intf #(
     assert (AXI_USER_WIDTH  >= 1) else $fatal(1, "AXI user width must be at least 1!");
   end
 `endif
-// pragma translate_on
+// synopsys translate_on
 
 endmodule // axi_to_mem_interleaved_intf

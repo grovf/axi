@@ -440,7 +440,7 @@ module axi_lite_demux #(
     end
     assign r_fifo_pop      = slv_r_valid & slv_r_ready;
 
-    // pragma translate_off
+    // synopsys translate_off
     `ifndef VERILATOR
     default disable iff (!rst_ni);
     aw_select: assume property( @(posedge clk_i) (slv_req_i.aw_valid |->
@@ -464,17 +464,17 @@ module axi_lite_demux #(
                                |=> $stable(slv_ar_chan)) else
       $fatal(1, "slv_aw_chan_select unstable with valid set.");
     `endif
-    // pragma translate_on
+    // synopsys translate_on
   end
 
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
     initial begin: p_assertions
       NoPorts:  assert (NoMstPorts > 0) else $fatal("Number of master ports must be at least 1!");
       MaxTnx:   assert (MaxTrans   > 0) else $fatal("Number of transactions must be at least 1!");
     end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 `include "axi/assign.svh"
@@ -556,12 +556,12 @@ module axi_lite_demux_intf #(
     .mst_resps_i     ( mst_resps       )
   );
 
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
     initial begin: p_assertions
       AddrWidth: assert (AxiAddrWidth > 0) else $fatal("Axi Parmeter has to be > 0!");
       DataWidth: assert (AxiDataWidth > 0) else $fatal("Axi Parmeter has to be > 0!");
     end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
