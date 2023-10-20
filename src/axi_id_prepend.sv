@@ -109,7 +109,7 @@ module axi_id_prepend #(
   assign slv_r_valids_o   = mst_r_valids_i;
   assign mst_r_readies_o  = slv_r_readies_i;
 
-// pragma translate_off
+// synopsys translate_off
 `ifndef VERILATOR
   initial begin : p_assert
     assert(NoBus > 0)
@@ -157,5 +157,5 @@ module axi_id_prepend #(
   r_resp  : assert final(mst_r_chans_i[0].resp === slv_r_chans_o[0].resp)
       else $fatal (1, "Something with the R channel ID stripping went wrong.");
 `endif
-// pragma translate_on
+// synopsys translate_on
 endmodule

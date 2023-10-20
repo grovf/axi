@@ -99,7 +99,7 @@ module axi_to_axi_lite #(
   );
 
   // Assertions, check params
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   initial begin
     assume (AxiIdWidth   > 0) else $fatal(1, "AXI ID width has to be > 0");
@@ -107,7 +107,7 @@ module axi_to_axi_lite #(
     assume (AxiDataWidth > 0) else $fatal(1, "AXI data width has to be > 0");
   end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 // Description: This module does the translation of the full AXI4+ATOP to AXI4-Lite signals.
@@ -226,7 +226,7 @@ module axi_to_axi_lite_id_reflect #(
   };
 
   // Assertions
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   aw_atop: assume property( @(posedge clk_i) disable iff (~rst_ni)
                         slv_req_i.aw_valid |-> (slv_req_i.aw.atop == '0)) else
@@ -241,7 +241,7 @@ module axi_to_axi_lite_id_reflect #(
                         slv_req_i.ar_valid |-> (slv_req_i.ar.len == '0)) else
     $fatal(1, "AR request length has to be zero. Value observed: %0b", slv_req_i.ar.len);
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 // interface wrapper

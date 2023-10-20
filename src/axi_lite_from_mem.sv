@@ -210,7 +210,7 @@ module axi_lite_from_mem #(
   assign mem_rsp_valid_o = (axi_rsp_i.b_valid && axi_req_o.b_ready) ||
                            (axi_rsp_i.r_valid && axi_req_o.r_ready);
 
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef SYNTHESIS
   `ifndef VERILATOR
     initial begin : proc_assert
@@ -243,5 +243,5 @@ module axi_lite_from_mem #(
         $fatal(1, "mem_be_i has to be stable if request is not granted!");
   `endif
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule

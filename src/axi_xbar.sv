@@ -167,7 +167,7 @@ import cf_math_pkg::idx_width;
         mst_port_idx_t'(Cfg.NoMstPorts) : mst_port_idx_t'(dec_ar);
 
     // make sure that the default slave does not get changed, if there is an unserved Ax
-    // pragma translate_off
+    // synopsys translate_off
     `ifndef VERILATOR
     `ifndef XSIM
     default disable iff (~rst_ni);
@@ -193,7 +193,7 @@ import cf_math_pkg::idx_width;
                                    when there is an unserved Ar beat. Slave Port: %0d", i));
     `endif
     `endif
-    // pragma translate_on
+    // synopsys translate_on
     axi_demux #(
       .AxiIdWidth     ( Cfg.AxiIdWidthSlvPorts ),  // ID Width
       .AtopSupport    ( ATOPs                  ),
@@ -321,7 +321,7 @@ import cf_math_pkg::idx_width;
     );
   end
 
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   `ifndef XSIM
   initial begin : check_params
@@ -332,7 +332,7 @@ import cf_math_pkg::idx_width;
   end
   `endif
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 `include "axi/assign.svh"

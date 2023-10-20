@@ -440,14 +440,14 @@ module axi_lite_mux #(
     );
   end
 
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
     initial begin: p_assertions
       NoPorts:  assert (NoSlvPorts > 0) else $fatal("Number of slave ports must be at least 1!");
       MaxTnx:   assert (MaxTrans   > 0) else $fatal("Number of transactions must be at least 1!");
     end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 // interface wrap
@@ -528,12 +528,12 @@ module axi_lite_mux_intf #(
     .mst_resp_i  ( mst_resp  )
   );
 
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
     initial begin: p_assertions
       AddrWidth: assert (AxiAddrWidth > 0) else $fatal("Axi Parameter has to be > 0!");
       DataWidth: assert (AxiDataWidth > 0) else $fatal("Axi Parameter has to be > 0!");
     end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule

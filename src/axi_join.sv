@@ -23,7 +23,7 @@ module axi_join_intf (
 
   `AXI_ASSIGN(out, in)
 
-// pragma translate_off
+// synopsys translate_off
 `ifndef VERILATOR
   initial begin
     assert(in.AXI_ADDR_WIDTH == out.AXI_ADDR_WIDTH);
@@ -32,6 +32,6 @@ module axi_join_intf (
     assert(in.AXI_USER_WIDTH == out.AXI_USER_WIDTH);
   end
 `endif
-// pragma translate_on
+// synopsys translate_on
 
 endmodule

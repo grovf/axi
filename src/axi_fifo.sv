@@ -151,13 +151,13 @@ module axi_fifo #(
   end
 
   // Check the invariants
-  // pragma translate_off
+  // synopsys translate_off
 `ifndef VERILATOR
   initial begin
     assert (Depth >= 0);
   end
 `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 `include "axi/assign.svh"
@@ -223,7 +223,7 @@ module axi_fifo_intf #(
   );
 
   // Check the invariants.
-  // pragma translate_off
+  // synopsys translate_off
 `ifndef VERILATOR
   initial begin
     assert (ADDR_WIDTH > 0)
@@ -252,5 +252,5 @@ module axi_fifo_intf #(
     else $fatal(1, "Wrong interface definition");
   end
 `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule

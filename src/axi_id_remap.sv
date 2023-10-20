@@ -350,7 +350,7 @@ module axi_id_remap #(
   `FFARN(aw_id_q, aw_id_d, '0, clk_i, rst_ni)
   `FFARN(state_q, state_d, Ready, clk_i, rst_ni)
 
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   initial begin : p_assert
     assert(AxiSlvPortIdWidth > 32'd0)
@@ -398,7 +398,7 @@ module axi_id_remap #(
   assert property (@(posedge clk_i) mst_req_o.aw_valid && !mst_resp_i.aw_ready
       |=> mst_req_o.aw_valid && $stable(mst_req_o.aw.id));
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 /// Internal module of [`axi_id_remap`](module.axi_id_remap): Table to remap input to output IDs.
@@ -550,7 +550,7 @@ module axi_id_remap_table #(
   `FFARN(table_q, table_d, '0, clk_i, rst_ni)
 
   // Assertions
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
     default disable iff (!rst_ni);
     assume property (@(posedge clk_i) push_i |->
@@ -570,7 +570,7 @@ module axi_id_remap_table #(
       assert (IdxWidth >= 1);
     end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 
 endmodule
 
@@ -644,7 +644,7 @@ module axi_id_remap_intf #(
     .mst_req_o  ( mst_req  ),
     .mst_resp_i ( mst_resp )
   );
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
     initial begin
       assert (slv.AXI_ID_WIDTH   == AXI_SLV_PORT_ID_WIDTH);
@@ -657,5 +657,5 @@ module axi_id_remap_intf #(
       assert (mst.AXI_USER_WIDTH == AXI_USER_WIDTH);
     end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule

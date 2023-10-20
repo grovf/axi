@@ -287,7 +287,7 @@ module axi_to_mem_banked #(
     assign mem_atop_o[i]  = mem_payload[i].atop;
   end
 
-// pragma translate_off
+// synopsys translate_off
 `ifndef VERILATOR
   initial begin: p_assertions
     assert (AxiIdWidth   >= 32'd1) else $fatal(1, "AxiIdWidth must be at least 1!");
@@ -303,7 +303,7 @@ module axi_to_mem_banked #(
         $fatal(1, "MemDataWidth has to be a divisor of AxiDataWidth.");
   end
 `endif
-// pragma translate_on
+// synopsys translate_on
 endmodule
 
 `include "axi/typedef.svh"
@@ -421,7 +421,7 @@ module axi_to_mem_banked_intf #(
     .mem_rdata_i
   );
 
-// pragma translate_off
+// synopsys translate_off
 `ifndef VERILATOR
   initial begin: p_assertions
     assert (AXI_ADDR_WIDTH  >= 1) else $fatal(1, "AXI address width must be at least 1!");
@@ -430,6 +430,6 @@ module axi_to_mem_banked_intf #(
     assert (AXI_USER_WIDTH  >= 1) else $fatal(1, "AXI user width must be at least 1!");
   end
 `endif
-// pragma translate_on
+// synopsys translate_on
 endmodule
 

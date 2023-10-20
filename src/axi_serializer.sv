@@ -188,7 +188,7 @@ module axi_serializer #(
 
   `FFARN(state_q, state_d, AtopIdle, clk_i, rst_ni)
 
-// pragma translate_off
+// synopsys translate_off
 `ifndef VERILATOR
   initial begin: p_assertions
     assert (AxiIdWidth    >= 1) else $fatal(1, "AXI ID width must be at least 1!");
@@ -214,7 +214,7 @@ module axi_serializer #(
       (mst_resp_i.r_valid & mst_req_o.r_ready |-> slv_resp_o.r_valid & slv_req_i.r_ready))
     else $error("R beat lost.");
 `endif
-// pragma translate_on
+// synopsys translate_on
 endmodule
 
 `include "axi/typedef.svh"
@@ -278,7 +278,7 @@ module axi_serializer_intf #(
     .mst_resp_i ( mst_resp )
   );
 
-// pragma translate_off
+// synopsys translate_off
 `ifndef VERILATOR
   initial begin: p_assertions
     assert (AXI_ADDR_WIDTH  >= 1) else $fatal(1, "AXI address width must be at least 1!");
@@ -291,5 +291,5 @@ module axi_serializer_intf #(
       else $fatal(1, "Maximum number of write transactions must be >= 1!");
   end
 `endif
-// pragma translate_on
+// synopsys translate_on
 endmodule

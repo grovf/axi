@@ -242,7 +242,7 @@ module axi_err_slv #(
     .overflow_o(                 )
   );
 
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   `ifndef XSIM
   initial begin
@@ -256,6 +256,6 @@ module axi_err_slv #(
   end
   `endif
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 
 endmodule

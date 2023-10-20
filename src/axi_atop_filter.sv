@@ -357,7 +357,7 @@ module axi_atop_filter #(
   );
   assign r_resp_cmd_push.len = slv_req_i.aw.len;
 
-// pragma translate_off
+// synopsys translate_off
 `ifndef VERILATOR
   initial begin: p_assertions
     assert (AxiIdWidth >= 1) else $fatal(1, "AXI ID width must be at least 1!");
@@ -365,7 +365,7 @@ module axi_atop_filter #(
       else $fatal(1, "Maximum number of outstanding write transactions must be at least 1!");
   end
 `endif
-// pragma translate_on
+// synopsys translate_on
 endmodule
 
 `include "axi/assign.svh"
@@ -432,7 +432,7 @@ module axi_atop_filter_intf #(
     .mst_req_o  ( mst_req  ),
     .mst_resp_i ( mst_resp )
   );
-// pragma translate_off
+// synopsys translate_off
 `ifndef VERILATOR
   initial begin: p_assertions
     assert (AXI_ADDR_WIDTH >= 1) else $fatal(1, "AXI ADDR width must be at least 1!");
@@ -440,5 +440,5 @@ module axi_atop_filter_intf #(
     assert (AXI_USER_WIDTH >= 1) else $fatal(1, "AXI USER width must be at least 1!");
   end
 `endif
-// pragma translate_on
+// synopsys translate_on
 endmodule

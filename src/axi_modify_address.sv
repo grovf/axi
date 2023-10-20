@@ -151,7 +151,7 @@ module axi_modify_address_intf #(
     .mst_ar_addr_i
   );
 
-// pragma translate_off
+// synopsys translate_off
 `ifndef VERILATOR
   initial begin
     assert(AXI_SLV_PORT_ADDR_WIDTH > 0);
@@ -160,5 +160,5 @@ module axi_modify_address_intf #(
     assert(AXI_ID_WIDTH > 0);
   end
 `endif
-// pragma translate_on
+// synopsys translate_on
 endmodule

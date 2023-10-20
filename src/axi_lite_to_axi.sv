@@ -85,13 +85,13 @@ module axi_lite_to_axi #(
     default: '0
   };
 
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   initial begin
     assert (AxiDataWidth > 0) else $fatal(1, "Data width must be non-zero!");
   end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 module axi_lite_to_axi_intf #(
@@ -104,13 +104,13 @@ module axi_lite_to_axi_intf #(
 );
   localparam int unsigned AxiSize = axi_pkg::size_t'($unsigned($clog2(AXI_DATA_WIDTH/8)));
 
-// pragma translate_off
+// synopsys translate_off
   initial begin
     assert(in.AXI_ADDR_WIDTH == out.AXI_ADDR_WIDTH);
     assert(in.AXI_DATA_WIDTH == out.AXI_DATA_WIDTH);
     assert(AXI_DATA_WIDTH    == out.AXI_DATA_WIDTH);
   end
-// pragma translate_on
+// synopsys translate_on
 
   assign out.aw_id     = '0;
   assign out.aw_addr   = in.aw_addr;

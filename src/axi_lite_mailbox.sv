@@ -187,7 +187,7 @@ module axi_lite_mailbox #(
     end
   end
 
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   initial begin : proc_check_params
     mailbox_depth:  assert (MailboxDepth > 1) else $fatal(1, "MailboxDepth has to be at least 2");
@@ -195,7 +195,7 @@ module axi_lite_mailbox #(
     axi_data_width: assert (AxiDataWidth > 0) else $fatal(1, "AxiDataWidth has to be > 0");
   end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 `include "axi/typedef.svh"
@@ -541,7 +541,7 @@ module axi_lite_mailbox_slave #(
     .ready_i ( slv_req_i.r_ready  ),
     .data_o  ( slv_resp_o.r       )
   );
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   initial begin : proc_check_params
     assert (AxiAddrWidth == $bits(slv_req_i.aw.addr)) else $fatal(1, "AW AxiAddrWidth mismatch");
@@ -550,7 +550,7 @@ module axi_lite_mailbox_slave #(
     assert (AxiDataWidth == $bits(slv_resp_o.r.data)) else $fatal(1, " R AxiDataWidth mismatch");
   end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
 
 `include "axi/assign.svh"
@@ -608,7 +608,7 @@ module axi_lite_mailbox_intf #(
     .base_addr_i // base address for each port
   );
 
-  // pragma translate_off
+  // synopsys translate_off
   `ifndef VERILATOR
   initial begin
     assert (slv[0].AXI_ADDR_WIDTH == AXI_ADDR_WIDTH)
@@ -621,5 +621,5 @@ module axi_lite_mailbox_intf #(
         else $fatal(1, "LITE Interface [1] AXI_DATA_WIDTH missmatch!");
   end
   `endif
-  // pragma translate_on
+  // synopsys translate_on
 endmodule
