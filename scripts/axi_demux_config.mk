@@ -17,6 +17,7 @@ RTL_SV_SRC += $(RTL_ROOT)/lzc.sv
 RTL_ROOT := $(DESIGN_CONFIG_PATH)/../src
 
 RTL_SV_SRC += $(RTL_ROOT)/axi_pkg.sv
+RTL_SV_SRC += $(RTL_ROOT)/axi_err_slv.sv
 RTL_SV_SRC += $(RTL_ROOT)/axi_demux_simple.sv
 RTL_SV_SRC += $(RTL_ROOT)/axi_demux.sv
 
