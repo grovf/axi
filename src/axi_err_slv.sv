@@ -220,7 +220,7 @@ module axi_err_slv #(
     end
   end
 
-  always_ff @(posedge clk_i, negedge rst_ni) begin
+  always_ff @(`GROVF_RDMA_CLK_RSTN(clk_i, rst_ni)) begin
     if (!rst_ni) begin
       r_busy_q <= '0;
     end else if (r_busy_load) begin
