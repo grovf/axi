@@ -37,10 +37,7 @@ module axi_to_axi_lite #(
   output full_resp_t slv_resp_o,
   // master port AXI4-Lite
   output lite_req_t  mst_req_o,
-  input  lite_resp_t mst_resp_i,
-  // aruser and ruser from axi side
-  output logic [AxiUserWidth-1:0] mst_awuser_o,
-  output logic [AxiUserWidth-1:0] mst_aruser_o
+  input  lite_resp_t mst_resp_i
 );
   // full bus declarations
   full_req_t  filtered_req,  splitted_req;
@@ -100,9 +97,6 @@ module axi_to_axi_lite #(
     .mst_req_o  ( mst_req_o     ),
     .mst_resp_i ( mst_resp_i    )
   );
-
-  assign mst_awuser_o = splitted_req.aw.user;
-  assign mst_aruser_o = splitted_req.ar.user;
 
   // Assertions, check params
   // synopsys translate_off
