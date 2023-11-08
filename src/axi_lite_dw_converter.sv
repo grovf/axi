@@ -66,6 +66,10 @@ module axi_lite_dw_converter #(
   parameter int unsigned AxiSlvPortDataWidth = 32'd0,
   /// AXI4-Lite data width of the master port.
   parameter int unsigned AxiMstPortDataWidth = 32'd0,
+  // Number of outstanding reads
+  parameter int unsigned AxiMaxReads         = 0    ,
+  // Number of outstanding reads
+  parameter int unsigned AxiMaxWrites        = 0    ,
   /// AXI4-Lite AW channel struct type. This is for both ports the same.
   parameter type         axi_lite_aw_t       = logic,
   /// AXI4-Lite W channel struct type of the slave port.
@@ -339,7 +343,7 @@ module axi_lite_dw_converter #(
 
     fifo_v3 #(
       .FALL_THROUGH ( 1'b1         ),
-      .DEPTH        ( UpsizeFactor ),
+      .DEPTH        ( AxiMaxWrites ),
       .dtype        ( sel_t        )
     ) i_fifo_w_sel (
       .clk_i,
@@ -421,7 +425,7 @@ module axi_lite_dw_converter #(
 
     fifo_v3 #(
       .FALL_THROUGH ( 1'b1         ),
-      .DEPTH        ( UpsizeFactor ),
+      .DEPTH        ( AxiMaxReads  ),
       .dtype        ( sel_t        )
     ) i_fifo_r_sel (
       .clk_i,
