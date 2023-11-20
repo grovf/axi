@@ -16,6 +16,10 @@
 // AXI Error Slave: This module always responds with an AXI error for transactions that are sent to
 // it.  This module optionally supports ATOPs if the `ATOPs` parameter is set.
 
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - put `GROVF_RDMA_CLK_RSTN macro for ff instanse
+
 module axi_err_slv #(
   parameter int unsigned          AxiIdWidth  = 0,                    // AXI ID Width
   parameter type                  axi_req_t   = logic,                // AXI 4 request struct, with atop field
