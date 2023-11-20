@@ -12,6 +12,11 @@
 // - Michael Rogenmoser <michaero@iis.ee.ethz.ch>
 // - Thomas Benz <tbenz@iis.ee.ethz.ch>
 
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 `include "common_cells/registers.svh"
 /// AXI4+ATOP slave module which translates AXI bursts into a memory stream.
 /// If both read and write channels of the AXI4+ATOP are active, both will have an

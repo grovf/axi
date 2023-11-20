@@ -14,6 +14,11 @@
 // - Andreas Kurth <akurth@iis.ee.ethz.ch>
 // - Fabian Schuiki <fschuiki@iis.ee.ethz.ch>
 
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 /// An AXI4+ATOP to AXI4-Lite converter with atomic transaction and burst support.
 module axi_to_axi_lite #(
   parameter int unsigned AxiAddrWidth    = 32'd0,

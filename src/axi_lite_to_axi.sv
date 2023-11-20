@@ -14,6 +14,11 @@
 // - Wolfgang Roenninger <wroennin@iis.ee.ethz.ch>
 // - Andreas Kurth <akurth@iis.ee.ethz.ch>
 
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 /// An AXI4-Lite to AXI4 adapter.
 module axi_lite_to_axi #(
   parameter int unsigned AxiDataWidth = 32'd0,

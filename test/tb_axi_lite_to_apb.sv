@@ -16,6 +16,11 @@
 //              Each APB slave is simulated by randomly updating its response signals each clock
 //              Cycle. There are some assertions testing sequences for correct APB4 signaling.
 
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 `include "axi/typedef.svh"
 `include "axi/assign.svh"
 

@@ -20,6 +20,12 @@
 
 //! AXI Package
 /// Contains all necessary type definitions, constants, and generally useful functions.
+
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 package axi_pkg;
     /// AXI Transaction Burst Width.
   parameter int unsigned BurstWidth  = 32'd2;

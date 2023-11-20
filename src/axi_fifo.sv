@@ -14,6 +14,11 @@
 // - Florian Zaruba <zarubaf@iis.ee.ethz.ch>
 // - Fabian Schuiki <fschuiki@iis.ee.ethz.ch>
 
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 // AXI4 Fifo
 //
 // Can be used to buffer transactions

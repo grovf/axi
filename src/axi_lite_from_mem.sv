@@ -20,6 +20,12 @@
 /// Response latency is not fixed and for sure **not 1** and depends on the AXI4-Lite memory system.
 /// The `mem_rsp_valid_o` can have multiple cycles of latency from the corresponding `mem_gnt_o`.
 /// (Was called `mem_to_axi_lite` - originating from https://github.com/pulp-platform/snitch)
+
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 module axi_lite_from_mem #(
   /// Memory request address width.
   parameter int unsigned MemAddrWidth = 32'd0,

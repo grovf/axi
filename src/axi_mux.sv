@@ -21,6 +21,11 @@
 // Responses are switched based on these bits. For example, with 4 slave ports
 // a response with ID `6'b100110` will be forwarded to slave port 2 (`2'b10`).
 
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 // register macros
 `include "common_cells/assertions.svh"
 `include "common_cells/registers.svh"

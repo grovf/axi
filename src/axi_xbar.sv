@@ -15,6 +15,12 @@
 
 /// axi_xbar: Fully-connected AXI4+ATOP crossbar with an arbitrary number of slave and master ports.
 /// See `doc/axi_xbar.md` for the documentation, including the definition of parameters and ports.
+
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 module axi_xbar
 import cf_math_pkg::idx_width;
 #(

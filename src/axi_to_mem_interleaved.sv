@@ -15,6 +15,12 @@
 
 /// AXI4+ATOP to SRAM memory slave. Allows for parallel read and write transactions.
 /// Allows reads to bypass writes, in contrast to `axi_to_mem`, however needs more hardware.
+
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 module axi_to_mem_interleaved #(
   /// AXI4+ATOP request type. See `include/axi/typedef.svh`.
   parameter type         axi_req_t  = logic,

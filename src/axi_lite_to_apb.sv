@@ -45,6 +45,11 @@
 // routes the response depending on the `apb_req.psel` bit and `apb_req.pwrite` either to the
 // AXI4Lite B channel for writes and to the R channel for reads.
 
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 `include "common_cells/registers.svh"
 
 module axi_lite_to_apb #(

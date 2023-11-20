@@ -12,6 +12,11 @@
 // - Wolfgang Roenninger <wroennin@iis.ee.ethz.ch>
 // - Andreas Kurth <akurth@iis.ee.ethz.ch>
 
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 // AXI ID Prepend: This module prepends/strips the MSB from the AXI IDs.
 // Constraints enforced through assertions: ID width of slave and master port
 

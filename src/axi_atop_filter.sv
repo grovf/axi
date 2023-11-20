@@ -12,6 +12,11 @@
 // - Andreas Kurth <akurth@iis.ee.ethz.ch>
 // - Wolfgang Roenninger <wroennin@iis.ee.ethz.ch>
 
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 /// Filter atomic operations (ATOPs) in a protocol-compliant manner.
 ///
 /// This module filters atomic operations (ATOPs), i.e., write transactions that have a non-zero

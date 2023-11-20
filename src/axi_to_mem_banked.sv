@@ -17,6 +17,12 @@
 ///
 /// The used address space starts at 0x0 and ends at the capacity of all memory banks combined.
 /// The higher address bits are ignored for accesses.
+
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 module axi_to_mem_banked #(
   /// AXI4+ATOP ID width
   parameter int unsigned                  AxiIdWidth    = 32'd0,

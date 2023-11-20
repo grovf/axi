@@ -58,6 +58,14 @@
 ///
 /// The module will be in this mode if `AxiSlvPortDataWidth == AxiMstPortDataWidth`.
 /// Here the module passes through the slave port to the master port.
+
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+// - added AxiMaxReads/AxiMaxWrites parameters and replaced fifo_v3 DEPTH val by them
+//   that was done to let outstanding requests
+
 `include "common_cells/registers.svh"
 module axi_lite_dw_converter #(
   /// AXI4-Lite address width of the ports.

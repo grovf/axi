@@ -13,6 +13,11 @@
 // - Florian Zaruba <zarubaf@iis.ee.ethz.ch>
 // - Andreas Kurth <akurth@iis.ee.ethz.ch>
 
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 /// Synthesizable module that (randomly) delays AXI channels.
 module axi_delayer #(
   // AXI channel types

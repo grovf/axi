@@ -14,6 +14,11 @@
 // - Wolfgang Roenninger <wroennin@iis.ee.ethz.ch>
 // - Florian Zaruba <zarubaf@iis.ee.ethz.ch>
 
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 `include "common_cells/registers.svh"
 
 /// Remap AXI IDs from wide IDs at the slave port to narrower IDs at the master port.

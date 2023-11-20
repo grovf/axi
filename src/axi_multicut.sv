@@ -18,6 +18,12 @@
 // Multiple AXI4 cuts.
 //
 // These can be used to relax timing pressure on very long AXI busses.
+
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 module axi_multicut #(
   parameter int unsigned NoCuts = 32'd1, // Number of cuts.
   // AXI channel structs

@@ -14,6 +14,11 @@
 // - Wolfgang Roenninger <wroennin@iis.ee.ethz.ch>
 // - Fabian Schuiki <fschuiki@iis.ee.ethz.ch>
 
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 /// Modify addresses on an AXI4 bus
 module axi_modify_address #(
   /// Request type of the slave port

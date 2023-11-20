@@ -19,6 +19,8 @@
 // Modified:
 // Anton Smolenskiy <anton.s@grovf.com>
 // - put `GROVF_RDMA_CLK_RSTN macro for ff instanse
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
 
 module axi_err_slv #(
   parameter int unsigned          AxiIdWidth  = 0,                    // AXI ID Width

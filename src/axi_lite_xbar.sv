@@ -17,6 +17,11 @@
 // See `doc/axi_lite_xbar.md` for the documentation,
 // including the definition of parameters and ports.
 
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 `include "axi/typedef.svh"
 
 module axi_lite_xbar #(

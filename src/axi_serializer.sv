@@ -19,6 +19,12 @@
 /// This module contains one queue with slave port IDs for the read direction and one for the write
 /// direction.  These queues are used to reconstruct the ID of responses at the slave port.  The
 /// depth of each queue is defined by `MaxReadTxns` and `MaxWriteTxns`, respectively.
+
+// Modified:
+// Anton Smolenskiy <anton.s@grovf.com>
+// - "pragma translate on/off" replaced by "synopsys translate on/off"
+//   since it's more common for most of the tools
+
 module axi_serializer #(
   /// Maximum number of in flight read transactions.
   parameter int unsigned MaxReadTxns  = 32'd0,
